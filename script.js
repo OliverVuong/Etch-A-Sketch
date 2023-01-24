@@ -31,3 +31,17 @@ function addHoverEffect(pixel){
         e.target.style.background = 'blue';
     })
 }
+
+function getLenFromUser(){
+    len = prompt("Please enter a length between 0 and 100");
+    
+    if(len < 0 || len > 100){
+        alert("Invalid length. Length must be between 0 and 100");
+        return;
+    }
+    let rows = document.querySelectorAll('.row');
+    rows.forEach(row => {(row.remove())});
+
+    makeRows(len);
+    makePixel(len);
+}
