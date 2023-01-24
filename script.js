@@ -20,7 +20,14 @@ function makePixel(len){
         for(let i = 0; i < len; i++){
             const pixel = document.createElement('div');
             pixel.classList.add('pixel');
+            addHoverEffect(pixel);
             row.appendChild(pixel);
         }
+    })
+}
+
+function addHoverEffect(pixel){
+    pixel.addEventListener('mouseover', function (e) {
+        e.target.style.background = 'blue';
     })
 }
