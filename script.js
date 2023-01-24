@@ -28,7 +28,15 @@ function makePixel(len){
 
 function addHoverEffect(pixel){
     pixel.addEventListener('mouseover', function (e) {
-        e.target.style.background = 'blue';
+        /*if(Array.from(e.target.classList).includes('visited')){
+            return;
+        }*/
+        if([... e.target.classList].includes('visited')){
+            e.target.style.filter = 'brightness(10%)';
+            return;
+        }
+        e.target.style.background = getRandRGB();
+        e.target.classList.add('visited');
     })
 }
 
@@ -44,4 +52,12 @@ function getLenFromUser(){
 
     makeRows(len);
     makePixel(len);
+}
+
+function getRandRGB(){
+    const max = 255;
+    const red = Math.floor(Math.random() * max);
+    const green = Math.floor(Math.random() * max);
+    const blue = Math.floor(Math.random() * max);
+    return `rgb(${red}, ${green}, ${blue})`;
 }

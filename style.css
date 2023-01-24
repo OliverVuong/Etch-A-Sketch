@@ -1,5 +1,5 @@
 .container {
-    /*background-color: brown;*/
+    background-color: white;
     width: 960px;
     height: 960px;
     display: flex;
@@ -10,6 +10,7 @@
 .pixel {
     border: 2px black solid;
     flex: 1;
+    filter: brightness(100%);
 }
 
 .row {
