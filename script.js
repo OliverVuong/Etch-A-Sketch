@@ -32,10 +32,14 @@ function addHoverEffect(pixel){
             return;
         }*/
         if([... e.target.classList].includes('visited')){
-            e.target.style.filter = 'brightness(10%)';
+            //e.target.style.filter = 'brightness(10%)';
+            //console.log(e.target.style.filter);
+            e.target.style.filter = getLowerBrightnessStr(e.target.style.filter);
+            //console.log(e.target.style.filter);
             return;
         }
         e.target.style.background = getRandRGB();
+        e.target.style.filter = 'brightness(100%)';
         e.target.classList.add('visited');
     })
 }
@@ -60,4 +64,13 @@ function getRandRGB(){
     const green = Math.floor(Math.random() * max);
     const blue = Math.floor(Math.random() * max);
     return `rgb(${red}, ${green}, ${blue})`;
+}
+
+//gets a string in the format 'brightness(80%)'
+//outputs a string that is 10% less => 'brightness(70%)'
+function getLowerBrightnessStr(str){
+    let numbersArr = str.match(/(\d+)/);
+    let ans = numbersArr[0] - 10;
+    ans = ans > 0 ? ans : 0;
+    return `brightness(${ans}%)`;
 }
