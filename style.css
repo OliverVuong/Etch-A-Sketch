@@ -1,19 +1,22 @@
 .container {
-    background-color: brown;
+    /*background-color: brown;*/
     width: 960px;
     height: 960px;
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    /*padding: 15px;*/
 }
 
 .pixel {
-    background-color: aqua;
+    border: 2px black solid;
+    flex: 1;
 }
 
 .row {
-    background-color: yellowgreen;
-    border: 2px black solid;
+    /*background-color: yellowgreen;
+    //border: 2px black solid;*/
     flex: 1;
-    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    /*padding: 5px;*/
 }

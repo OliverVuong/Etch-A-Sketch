@@ -1,8 +1,9 @@
 let len = 16;
 
-makeGrid(len);
+makeRows(len);
+makePixel(len);
 
-function makeGrid(len){
+function makeRows(len){
     const container = document.querySelector('.container');
     //const rows = [];
     for(let i = 0; i < len; i++){
@@ -11,4 +12,15 @@ function makeGrid(len){
         //row.textContent = "Helloooo";
         container.appendChild(row);
     }
+}
+
+function makePixel(len){
+    const rows = document.querySelectorAll('.row');
+    rows.forEach((row) => {
+        for(let i = 0; i < len; i++){
+            const pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            row.appendChild(pixel);
+        }
+    })
 }
