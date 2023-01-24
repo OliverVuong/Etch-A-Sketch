@@ -2,8 +2,18 @@
     background-color: brown;
     width: 960px;
     height: 960px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
 }
 
 .pixel {
     background-color: aqua;
+}
+
+.row {
+    background-color: yellowgreen;
+    border: 2px black solid;
+    flex: 1;
+    padding: 5px;
 }
